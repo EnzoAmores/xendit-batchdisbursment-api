@@ -7,9 +7,17 @@ import utilities.Base;
 
 public class ScenarioHooks {
 	WebDriver webDriver = Base.getWebDriver();
-	
+
+	// ==================================================|Hooks|==================================================
 	@After
 	public void scenarioAfter() {
-		webDriver.quit();
+		quitBrowser();
+	}
+
+	// ==================================================|Helpers|==================================================
+
+	private void quitBrowser() {
+		if (webDriver != null)
+			webDriver.quit();
 	}
 }
