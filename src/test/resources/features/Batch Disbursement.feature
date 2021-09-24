@@ -27,11 +27,6 @@ Feature: Batch Disbursement
       | Sample-Disb123 | 123.45.67         | BCA       |          1234567890 | Fadlan            | Batch Disbursement | SampDisb1   | Failed         |
       | Sample-Disb123 |            123.45 | BCA       | 1001.@343242        | Fadlan            | Batch Disbursement | SampDisb1   | Failed         |
 
-  Scenario: Batch Disbursement with Above Max Rows
-    Given I will test batch disbursement api
-    When I send a request to the batch disbursement api with more than 10000 transactions
-    Then I will expect a response that the api "Failed due to Max Rows Limit Exceeded"
-
   Scenario: Batch Disbursement with an invalid API Key
     Given I will test batch disbursement api
     When I send a request to the batch disbursement api with an invalid API key

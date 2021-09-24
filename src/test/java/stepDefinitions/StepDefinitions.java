@@ -92,23 +92,20 @@ public class StepDefinitions {
 	@Then("I will expect a response that the api (.*)$")
 	public void I_will_expect_an_error_response_saying_message(String strExpectedOutput) throws Throwable {
 		try {
-			Integer expected = 0;
+			Integer result = 0;
 			Integer actual = response.getStatusCode();
 			
-			if (strExpectedOutput.equals("Passed")) {
-				expected = 200;
+			if (strExpectedOutput.contains("Passed")) {
+				result = 200;
 			}
-			else if (strExpectedOutput.equals("Failed")) {
-				expected = 400;
-			}
-			else if (strExpectedOutput.contains("Failed due to Max Rows Limit Exceeded")) {
-				expected = 413;
+			else if (strExpectedOutput.contains("Failed")) {
+				result = 400;
 			}
 			else if (strExpectedOutput.contains("Cannot be called due to Unauthorized API key")) {
-				expected = 401;
+				result = 401;
 			}
 			
-			Assert.assertEquals(actual, expected);
+			Assert.assertEquals(actual, result);
 		} catch (AssertionError assertionError) {
 			throw new Exception(assertionError.getMessage());
 		} catch (Exception exception) {
