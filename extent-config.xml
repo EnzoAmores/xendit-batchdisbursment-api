@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+	<configuration>
+		<theme>dark</theme>
+		<encoding>UTF-8</encoding>
+		<protocol>https</protocol>
+		<documentTitle>Extent Reports</documentTitle>
+		<reportName>Xendit - Batch Disbursement - API Testing Report</reportName>
+		<testViewChartLocation>bottom</testViewChartLocation>
+		<timeStampFormat>dd/MM/yyyy hh:mm</timeStampFormat>
+		<offlineMode>false</offlineMode>
+		<scripts>
+<![CDATA[
+$(document).ready(function() {
+});
+]]>
+		</scripts>
+		<!-- custom styles -->
+		<styles>
+<![CDATA[
+]]>
+		</styles>
+	</configuration>
+</extentreports>
